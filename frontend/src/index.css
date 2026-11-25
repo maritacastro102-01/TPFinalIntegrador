@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  color: #172554;
+  background: #f5f7fa;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { text-decoration: none; color: inherit; }
+button, input { font: inherit; }
+
+.navbar {
+  background: #101c35;
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo { font-size: 22px; font-weight: 900; }
+.logo span { color: #f5a623; }
+nav { display: flex; gap: 25px; flex-wrap: wrap; }
+nav a:hover { color: #f5a623; }
+
+button { cursor: pointer; border: none; }
+.cart-button, .primary-button, .add-button {
+  background: #f5a623;
+  color: #101c35;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-weight: 800;
+}
+.cart-button:hover, .add-button:hover, .primary-button:hover {
+  background: #ffc65b;
+}
+
+.hero {
+  min-height: 390px;
+  padding: 65px 9%;
+  background: linear-gradient(110deg, #101c35, #243e68);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.hero-content { max-width: 650px; }
+.eyebrow { color: #e99b19; font-weight: 800; letter-spacing: 3px; }
+.hero h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.05; margin: 15px 0; }
+.hero-content > p:not(.eyebrow) { color: #d8e1ef; margin-bottom: 30px; }
+.hero-icon { font-size: clamp(90px, 15vw, 170px); }
+.primary-button { display: inline-block; }
+
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 25px;
+  background: white;
+  font-weight: 700;
+}
+
+.catalogo { padding: 65px 7%; text-align: center; }
+.catalogo h2, .about h2, .contact h2 { font-size: 30px; }
+.search {
+  width: min(100%, 500px);
+  padding: 14px;
+  border: 1px solid #ccd4df;
+  border-radius: 8px;
+  margin: 15px auto 35px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px #14213d12;
+}
+.product-image {
+  height: 155px;
+  background: #e9eef6;
+  display: grid;
+  place-items: center;
+  font-size: 75px;
+}
+.product-info { padding: 18px; }
+.product-info small { color: #64748b; }
+.product-info h3 { margin: 8px 0; }
+.product-info p { color: #64748b; font-size: 13px; min-height: 34px; }
+.price { color: #d88a08; }
+.add-button { width: 100%; margin-top: 12px; }
+.add-button:disabled { opacity: .5; cursor: not-allowed; }
+
+.cart-section {
+  background: white;
+  margin: 20px 7% 50px;
+  padding: 25px;
+  border-radius: 12px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+.cart-controls { display: flex; align-items: center; gap: 12px; }
+.cart-controls button {
+  background: #e9eef6;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.about, .contact { padding: 55px 8%; text-align: center; }
+.about { background: #e9eef6; }
+.contact a { color: #b87908; font-weight: 800; }
+footer {
+  background: #101c35;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+footer small { color: #bdc9db; }
+
+@media (max-width: 650px) {
+  .navbar { justify-content: center; }
+  nav { justify-content: center; gap: 15px; }
+  .hero { text-align: center; justify-content: center; }
+  .hero-icon { display: none; }
+  .cart-item { align-items: flex-start; }
+}
+
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-section {
+  background: white;
+  color: #172554;
+  width: 420px;
+  max-width: 90%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 30px;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.close-cart {
+  float: right;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-controls button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
